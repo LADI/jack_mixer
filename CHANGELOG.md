@@ -1,19 +1,19 @@
 Change Log
 ==========
 
-## Version 18 (2023-11-10)
+## Version 18 (2023-11-09)
 
 Fixed:
 
 * Compilation with Cython >= 3 has been fixed (#176).
-* Output channel name changes are properkly reflected in input channel control
+* Output channel name changes are properly reflected in input channel control
   groups (#177).
 * Prefader kmeters now also fall at same rate regardless of jack buffer size.
 * The Spanish translations was updated (#168).
 
 Changes:
 
-* `PyDG` has been replaced with `appdirs` (#150).
+* `PyXDG` has been replaced with `appdirs` (#150).
 * `mesonep517` has been replaced with `meson-python` for PEP-517 compliant
   builds (for testing needs only) (#179).
 * All log messages are now prefixed with `[jack_mixer]` so they can be better
@@ -22,7 +22,7 @@ Changes:
 
 Features:
 
-* NSM implemntation now includes support for dirty/clean save status (#154).
+* NSM implementation now includes support for dirty/clean save status (#154).
 
 With contributions from Christopher Arndt, Daryl Hanlon, Nils Hilbricht, Mark
 Knoop and Daniel Sheeler.
