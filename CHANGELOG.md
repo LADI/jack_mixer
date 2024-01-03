@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-## Version 18 (2023-11-09)
+## LADIOS Version 18 (2024-01-04)
 
 Fixed:
 
@@ -16,8 +16,6 @@ Changes:
 * `PyXDG` has been replaced with `appdirs` (#150).
 * `mesonep517` has been replaced with `meson-python` for PEP-517 compliant
   builds (for testing needs only) (#179).
-* All log messages are now prefixed with `[jack_mixer]` so they can be better
-  recognized / filtered in the NSM session logs (#162).
 * The included `nsmclient` module was updated (#164).
 
 Features:
