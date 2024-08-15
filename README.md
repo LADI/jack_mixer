@@ -74,7 +74,7 @@ Adriaensen.
 ## Feedback and Contributing
 
 For related discussions, you are invited to join
-link:https://libera.chat/[Libera.Chat] channel #ladi
+[Libera.Chat](https://libera.chat/) channel #ladi
 
 If you want to get involved with jack_mixer's development, documentation or
 translation, please read the [contributing guide].
