@@ -1,4 +1,4 @@
-Change Log
+NEWS
 ==========
 
 ## LADIOS Version 19 (2024-08-XX)
@@ -7,6 +7,8 @@ Changes:
 
 * The dependency on `appdirs`, which has become unmaintained, has been replaced
   with `plaformdirs` (#184).
+* CHANGELOG.md renamed back to NEWS.md
+  GNU standards are for good and to be followed.
 
 Documentation:
 
