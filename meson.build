@@ -1,7 +1,7 @@
 project(
     'jack_mixer',
     'c',
-    version: '18',
+    version: '19',
     license: 'GPL2+',
     default_options: [
         'warning_level=2'
@@ -34,7 +34,7 @@ if get_option('gui').enabled()
         'python3',
         required: true,
         pure: false,
-        modules: get_option('check-py-modules') ? ['gi', 'cairo', 'appdirs'] : []
+        modules: get_option('check-py-modules') ? ['gi', 'cairo', 'platformdirs'] : []
     )
 endif
 

@@ -1,7 +1,28 @@
 Change Log
 ==========
 
+## LADIOS Version 19 (2024-08-XX)
+
+Changes:
+
+* The dependency on `appdirs`, which has become unmaintained, has been replaced
+  with `plaformdirs` (#184).
+
+Documentation:
+
+* Some minor fixes and updates to the installation instructions were done.
+
 ## LADIOS Version 18 (2024-01-04)
+
+This version differs from community version 18
+(released on 2023-11-09) by revert of commit that degrades
+ladish experience. "All log messages are now prefixed with `[jack_mixer]`
+change is was made non-optional and complaints were rejected and then ignored.
+
+This means that original author, Nedko Arnaudov, is back on maintaing
+jack_mixer codebase. While the ladish related regressons are maintained in
+the community version (since version 7 times), jack_mixer will be released
+as part of LADI project.
 
 Fixed:
 
