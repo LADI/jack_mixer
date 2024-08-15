@@ -8,9 +8,25 @@ mix multiple JACK audio streams.
 It is licensed under GPL version 2 (or later), check the file [COPYING] for
 more information.
 
-Please visit the project's homepage at https://rdio.space/jackmixer/ for more
-information.
+This is LADI variant of jack_mixer. More than 10 years after the original author
+gave up of the project maintenance to communty,
+user experience under lash or ladish was degraded in series of commits
+while promoting nonsm/newsm/raysession as replacement.
+The complaints in recent years by original author were ignored and or rejected by
+currently active developers/maintainers.
 
+This unfortunate state of affairs led the original author of jack_mixer, Nedko Arnaudov,
+into getting back on maintaing jack_mixer, starting with version 18.
+
+The LADI jack_mixer project is bound to principles like *diversity*,
+as outlined in Ubuntu Code of Conduct.
+
+Here is list of regressions in the community version to be (or aleady) fixed:
+
+* removal of pylash support in same commit that adds nsm protocol support.
+* prefixing of all log messages with `[jack_mixer]` messages (already fixed, by revert, but change can be made non-monoculturlistic and then reapplied).
+
+You can find the community version at https://rdio.space/jackmixer/
 
 ## Installation
 
@@ -49,32 +65,21 @@ the corresponding channel.
 
 ## Authors and Acknowledgements
 
-jack_mixer was initially written and supported by Nedko Arnaudov, it is now
-maintained by Frédéric Péters. For a list of contributors see the file
-[AUTHORS].
+jack_mixer was written and is supported by Nedko Arnaudov.
+For a list of contributors see the file [AUTHORS].
 
 K-meter implementation taken from jkmeter, licensed under the GPL 2, by Fons
 Adriaensen.
 
-
 ## Feedback and Contributing
 
-If you have trouble getting jack_mixer working, find a bug or you miss some
-feature, please [create an issue] on GitHub or contact the maintainer by email.
-
-You can reach Frédéric at `fpeters (a.t) 0d (dot) be`, and Nedko at
-`nedko (a.t) arnaudov (dot) name`. Most recently, the primary developers are
-Daniel Sheeler at `dsheeler (a.t) pobox (dot) com` and Christopher Arndt at
-`chris (a.t) chrisarndt (dot) de`, and you can also usually find these folks in
-`#jack_mixer` or `#lad` on Libera.Chat (as *fpeters*, *nedko*, *dsheeler* and
-*strogon14*).
+For related discussions, you are invited to join
+link:https://libera.chat/[Libera.Chat] channel #ladi
 
 If you want to get involved with jack_mixer's development, documentation or
 translation, please read the [contributing guide].
-
 
 [AUTHORS]: ./AUTHORS
 [COPYING]: ./COPYING
 [INSTALL.md]: ./INSTALL.md
 [contributing guide]: ./docs/CONTRIBUTING.md
-[create an issue]: https://github.com/jack-mixer/jack_mixer/issues
