@@ -8,10 +8,10 @@ if not get_option('wheel')
 
     # RaySession template
 
-    raysession_template = 'client_templates.xml'
-    install_data(
-        raysession_template,
-        install_dir: raysessiondir)
+#    raysession_template = 'client_templates.xml'
+#    install_data(
+#        raysession_template,
+#        install_dir: raysessiondir)
 
     # Application icons
     sizes = [
