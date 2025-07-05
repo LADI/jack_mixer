@@ -165,9 +165,9 @@ class Channel(Gtk.Box, SerializedObject):
             self.slider.destroy()
 
         if self.gui_factory.use_custom_widgets:
-            self.slider = slider.CustomSliderWidget(self.slider_adjustment)
+            self.slider = slider.CustomSliderWidget(self.app, self.slider_adjustment)
         else:
-            self.slider = slider.VolumeSlider(self.slider_adjustment)
+            self.slider = slider.VolumeSlider(self.app, self.slider_adjustment)
 
         if parent:
             parent.pack_start(self.slider, True, False, 0)
@@ -220,9 +220,9 @@ class Channel(Gtk.Box, SerializedObject):
 
         # Level meter
         if self.stereo:
-            self.meter = meter.StereoMeterWidget(self.meter_scale)
+            self.meter = meter.StereoMeterWidget(self.app, self.meter_scale)
         else:
-            self.meter = meter.MonoMeterWidget(self.meter_scale)
+            self.meter = meter.MonoMeterWidget(self.app, self.meter_scale)
 
         self.on_vumeter_color_changed(self.gui_factory)
 

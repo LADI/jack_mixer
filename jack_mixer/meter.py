@@ -30,7 +30,7 @@ METER_MIN_WIDTH = 24
 METER_MAX_WIDTH = 40
 
 class MeterWidget(Gtk.DrawingArea):
-    def __init__(self, scale):
+    def __init__(self, app, scale):
         log.debug("Creating MeterWidget for scale %s", scale)
         super().__init__()
         self.color_bg = Gdk.Color(0, 0, 0)
@@ -40,10 +40,10 @@ class MeterWidget(Gtk.DrawingArea):
         self.height = 0
         self.cache_surface = None
 
-        self.min_width = METER_MIN_WIDTH
-        self.preferred_width = METER_MAX_WIDTH
+        self.min_width = METER_MIN_WIDTH * app.ui_xscale_factor96
+        self.preferred_width = METER_MAX_WIDTH * app.ui_xscale_factor96
         self.current_width_size_request = self.preferred_width
-        self.preferred_height = 200
+        self.preferred_height = 200 * app.ui_yscale_factor96
         self.set_scale(scale)
 
         self.widen()
@@ -154,8 +154,8 @@ class MeterWidget(Gtk.DrawingArea):
 
 
 class MonoMeterWidget(MeterWidget):
-    def __init__(self, scale):
-        super().__init__(scale)
+    def __init__(self, app, scale):
+        super().__init__(app, scale)
         self.value = 0.0
         self.pk = 0.0
         self.raw_value = 0.0
@@ -204,8 +204,8 @@ class MonoMeterWidget(MeterWidget):
 
 
 class StereoMeterWidget(MeterWidget):
-    def __init__(self, scale):
-        super().__init__(scale)
+    def __init__(self, app, scale):
+        super().__init__(app, scale)
         self.pk_left = 0.0
         self.pk_right = 0.0
 

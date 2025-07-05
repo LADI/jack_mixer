@@ -115,8 +115,9 @@ GObject.signal_new(
 
 
 class VolumeSlider(Gtk.Scale):
-    def __init__(self, adjustment):
+    def __init__(self, app, adjustment):
         super().__init__(orientation=Gtk.Orientation.VERTICAL)
+#        self.app = app
         self.adjustment = adjustment
         self.set_adjustment(adjustment)
         self.set_draw_value(False)
@@ -124,9 +125,9 @@ class VolumeSlider(Gtk.Scale):
         self._button_down = False
         self._button_down_y = 0
         self._button_down_value = 0
-        self.min_width = FADER_MIN_WIDTH
-        self.preferred_width = FADER_MAX_WIDTH
-        self.preferred_height = 200
+        self.min_width = FADER_MIN_WIDTH * app.ui_xscale_factor96
+        self.preferred_width = FADER_MAX_WIDTH * app.ui_xscale_factor96
+        self.preferred_height = 200 * app.ui_yscale_factor96
 
         self.connect("button-press-event", self.button_press_event)
         self.connect("button-release-event", self.button_release_event)
@@ -281,15 +282,16 @@ class BalanceSlider(Gtk.Scale):
 
 
 class CustomSliderWidget(Gtk.DrawingArea):
-    def __init__(self, adjustment):
+    def __init__(self, app, adjustment):
         super().__init__()
+#        self.app = app
         self.adjustment = adjustment
         self._button_down = False
         self._button_down_y = 0
         self._button_down_value = 0
-        self.min_width = FADER_MIN_WIDTH
-        self.preferred_width = FADER_MAX_WIDTH
-        self.preferred_height = 200
+        self.min_width = FADER_MIN_WIDTH * app.ui_xscale_factor96
+        self.preferred_width = FADER_MAX_WIDTH * app.ui_xscale_factor96
+        self.preferred_height = 200 * app.ui_yscale_factor96
 
         self.connect("draw", self.on_expose)
         self.connect("size_allocate", self.on_size_allocate)

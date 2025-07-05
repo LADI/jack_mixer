@@ -20,7 +20,9 @@ from urllib.parse import urlparse
 
 import gi
 
+gi.require_version('Gdk', '3.0')
 gi.require_version("Gtk", "3.0")
+from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GLib
 
@@ -202,6 +204,24 @@ class JackMixer(SerializedObject):
         self.window = Gtk.Window(type=Gtk.WindowType.TOPLEVEL)
         self.window.set_icon_name(__program__)
         self.window.set_default_size(self.width, self.height)
+
+        #GdkRectangle workarea = {0};
+        #gdk_monitor_get_workarea(gdk_display_get_primary_monitor(gdk_display_get_default()), &workarea);
+        #gdk_screen_width() => workarea.width
+        #gdk_screen_height() => workarea.height
+        display = Gdk.Display.get_default()
+        monitor = display.get_monitor(0)
+        workarea = monitor.get_workarea()
+        width_pixels = workarea.width
+        height_pixels = workarea.height
+        width_mm = monitor.get_width_mm()
+        height_mm = monitor.get_height_mm()
+        xdpi = width_pixels * 25.4 / width_mm
+        ydpi = height_pixels * 25.4 / height_mm
+        log.debug("DISPLAY: " + str(width_pixels) + "x" + str(height_pixels) + " (" + str(width_mm) + "mm x " + str(height_mm) + "mm). DPI: " + str(xdpi) + "x" + str(ydpi))
+        self.ui_xscale_factor96 = xdpi / 96
+        self.ui_yscale_factor96 = ydpi / 96
+        log.debug("Scale factor (vs 96 DPI): " + str(self.ui_xscale_factor96) + " x " + str(self.ui_yscale_factor96))
 
         self.gui_factory = gui.Factory(self.window, self.meter_scales, self.slider_scales)
         self.gui_factory.connect("language-changed", self.on_language_changed)
