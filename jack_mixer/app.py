@@ -222,6 +222,9 @@ class JackMixer(SerializedObject):
         self.ui_xscale_factor96 = xdpi / 96
         self.ui_yscale_factor96 = ydpi / 96
         log.debug("Scale factor (vs 96 DPI): " + str(self.ui_xscale_factor96) + " x " + str(self.ui_yscale_factor96))
+        screen = self.window.get_screen()
+        screen.set_resolution((xdpi + ydpi)/2)
+
 
         self.gui_factory = gui.Factory(self.window, self.meter_scales, self.slider_scales)
         self.gui_factory.connect("language-changed", self.on_language_changed)
