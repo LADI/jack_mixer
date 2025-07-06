@@ -5,6 +5,8 @@ jack_mixer -- Jack Audio Mixer
 hardware mixing desks. It has lot of useful features, apart from being able to
 mix multiple JACK audio streams.
 
+![screenshot](data/screenshots/jack_mixer-560606.png "LADI jack_mixer GTK3 GUI running on HighDPI 3840x2560 screen")
+
 It is licensed under GPL version 2 of, check the file [COPYING] for
 more information.
 
