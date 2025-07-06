@@ -26,6 +26,10 @@ Here is list of regressions in the community version to be (or aleady) fixed:
 * removal of pylash support in same commit that adds nsm protocol support.
 * prefixing of all log messages with `[jack_mixer]` messages (already fixed, by revert, but change can be made non-monoculturlistic and then reapplied).
 
+If you have patch that distinguishes between non-sm and new-sm protocols while
+not causing regressions in lash support, submit it to the original author (Nedko Arnaudov).
+
+You can find the LADI version at https://gitea.ladish.org/LADI/jack_mixer
 You can find the community version at https://rdio.space/jackmixer/
 
 ## Installation
