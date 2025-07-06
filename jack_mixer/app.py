@@ -216,15 +216,25 @@ class JackMixer(SerializedObject):
         height_pixels = workarea.height
         width_mm = monitor.get_width_mm()
         height_mm = monitor.get_height_mm()
-        xdpi = width_pixels * 25.4 / width_mm
-        ydpi = height_pixels * 25.4 / height_mm
-        log.debug("DISPLAY: " + str(width_pixels) + "x" + str(height_pixels) + " (" + str(width_mm) + "mm x " + str(height_mm) + "mm). DPI: " + str(xdpi) + "x" + str(ydpi))
-        self.ui_xscale_factor96 = xdpi / 96
-        self.ui_yscale_factor96 = ydpi / 96
-        log.debug("Scale factor (vs 96 DPI): " + str(self.ui_xscale_factor96) + " x " + str(self.ui_yscale_factor96))
-        screen = self.window.get_screen()
-        screen.set_resolution((xdpi + ydpi)/2)
+        if width_mm > 10 and height_mm > 10:
+            xdpi = width_pixels * 25.4 / width_mm
+            ydpi = height_pixels * 25.4 / height_mm
+            self.ui_xscale_factor96 = xdpi / 96
+            self.ui_yscale_factor96 = ydpi / 96
+            screen = self.window.get_screen()
+            screen.set_resolution((xdpi + ydpi) / 2)
+        else:
+            log.debug("Monitor physical dimensions are not available, assuming 96 DPI")
+            log.debug("If using X11 and HighDPI, check output of xrandr command.")
+            log.debug("If you see \"0mm x 0mm\" instead of e.g. \"597mm x 397mm\",")
+            log.debug("the best is to fix it in the proper place (X11 server [configuration]).")
+            xdpi = 96
+            ydpi = 96
+            self.ui_xscale_factor96 = 1
+            self.ui_yscale_factor96 = 1
 
+        log.debug("DISPLAY: " + str(width_pixels) + "x" + str(height_pixels) + " (" + str(width_mm) + "mm x " + str(height_mm) + "mm). DPI: " + str(xdpi) + "x" + str(ydpi))
+        log.debug("Scale factor (vs 96 DPI): " + str(self.ui_xscale_factor96) + " x " + str(self.ui_yscale_factor96))
 
         self.gui_factory = gui.Factory(self.window, self.meter_scales, self.slider_scales)
         self.gui_factory.connect("language-changed", self.on_language_changed)
