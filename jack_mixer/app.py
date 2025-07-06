@@ -50,8 +50,7 @@ __doc__ = _("A multi-channel audio mixer application for the JACK Audio Connecti
 __license__ = _("""\
 jack_mixer is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
-Free Software Foundation; either version 2 of the License, or (at your
-option) any later version.
+Free Software Foundation; version 2 of the License.
 
 jack_mixer is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
