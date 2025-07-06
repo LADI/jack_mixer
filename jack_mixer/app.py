@@ -3,7 +3,7 @@
 #
 # This file is part of jack_mixer
 #
-# Copyright (C) 2006-2009 Nedko Arnaudov <nedko@arnaudov.name>
+# Copyright (C) 2006-2025 Nedko Arnaudov
 # Copyright (C) 2009-2021 Frederic Peters <fpeters@0d.be> et al.
 #
 
@@ -599,7 +599,7 @@ class JackMixer(SerializedObject):
         about.set_license(__license__)
         about.set_authors(
             [
-                "Nedko Arnaudov <nedko@arnaudov.name>",
+                "Nedko Arnaudov",
                 "Christopher Arndt <chris@chrisarndt.de>",
                 "Arnout Engelen <arnouten@bzzt.net>",
                 "John Hedges <john@drystone.co.uk>",
