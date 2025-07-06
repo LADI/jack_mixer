@@ -5,7 +5,7 @@ jack_mixer -- Jack Audio Mixer
 hardware mixing desks. It has lot of useful features, apart from being able to
 mix multiple JACK audio streams.
 
-It is licensed under GPL version 2 (or later), check the file [COPYING] for
+It is licensed under GPL version 2 of, check the file [COPYING] for
 more information.
 
 Please visit the project's homepage at https://rdio.space/jackmixer/ for more
