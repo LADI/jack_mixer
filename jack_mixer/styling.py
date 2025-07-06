@@ -1,6 +1,6 @@
 # This file is part of jack_mixer
 #
-# Copyright (C) 2006-2009 Nedko Arnaudov <nedko@arnaudov.name>
+# Copyright (C) 2006-2025 Nedko Arnaudov
 # Copyright (C) 2009-2020 Frederic Peters <fpeters@0d.be> et al.
 # Copyright (C) 2020-2021 Christopher Arndt <info@chrisarndt>
 #

@@ -2,7 +2,7 @@
  *
  *   This file is part of jack_mixer
  *
- *   Copyright (C) 2006 Nedko Arnaudov <nedko@arnaudov.name>
+ *   Copyright (C) 2006-2025 Nedko Arnaudov
  *   Copyright (C) 2009-2011 Frederic Peters <fpeters@0d.be>
  *
  *   This program is free software; you can redistribute it and/or modify

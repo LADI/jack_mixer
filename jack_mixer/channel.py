@@ -1,6 +1,6 @@
 # This file is part of jack_mixer
 #
-# Copyright (C) 2006 Nedko Arnaudov <nedko@arnaudov.name>
+# Copyright (C) 2006-2025 Nedko Arnaudov
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

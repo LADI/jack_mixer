@@ -1,7 +1,7 @@
 /* -*- Mode: C ; c-basic-offset: 2 -*- */
 /*****************************************************************************
  *
- *   Copyright (C) 2006,2007 Nedko Arnaudov <nedko@arnaudov.name>
+ *   Copyright (C) 2006-2025 Nedko Arnaudov
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
