@@ -6,9 +6,9 @@
 A minimal JACK audio mixer with MIDI volume control
 ---------------------------------------------------
 
-:Author: Nedko Arnaudov <nedko@arnaudov.name> (original author),
-    Frédéric Peters <fpeters@0d.be> (current maintainer).
-:Date: 2021-04-14
+:Author: Nedko Arnaudov,
+    Frédéric Peters.
+:Date: 2025-06-05
 :Copyright: GNU General Public License Version 2
 :Version: @VERSION@
 :Manual section: 1
