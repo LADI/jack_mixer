@@ -6,9 +6,11 @@
 A graphical multi-channel audio mixer for JACK
 ----------------------------------------------
 
-:Author: Nedko Arnaudov <nedko@arnaudov.name> (original author),
-    Frédéric Peters <fpeters@0d.be> (current maintainer).
-:Date: 2021-04-14
+:Author: Nedko Arnaudov (original author),
+    Frédéric Peters,
+    Daniel Sheeler,
+    Christopher Arndt
+:Date: 2025-06-06
 :Copyright: GNU General Public License Version 2
 :Version: @VERSION@
 :Manual section: 1
@@ -24,11 +26,14 @@ jack_mixer.py [-h] [-c FILE] [-d] [NAME]
 DESCRIPTION
 ===========
 
-This manual page documents the **jack_mixer** command.
+This manual page documents the **jack_mixer** command, LADI version of.
 
 **jack_mixer** is a multi-channel audio mixer application for the JACK Audio
 Connection Kit with a graphical user interface and has a look & handling similar
 to hardware mixing desks.
+
+The LADI version is a fork of the community version of jack_mixer by the original author,
+Nedko Arnaudov.
 
 
 OPTIONS
@@ -228,12 +233,19 @@ Channel buttons:
 COMPATIBILITY
 =============
 
-**jack_mixer** is fully compatible with the New Session Manager (NSM) protocol
-and provides Level 1 (L1) support for the LADISH protocol. When running as an
-NSM client, the mixer layout and current state will be saved in the NSM session.
+LADI **jack_mixer** is compatible with the LASH and LADISH systems.
+Under LADISH, LASH support is provided via L2-LASH level and
+the simpler L1 (save on SIGUSR1) works too.
+
 When started as an L1 client by LADISH, the mixer layout and current state will
 be saved in the LADISH studio session or project (the first time LADISH
 requests **jack_mixer** to save a project, it will open a "Save as" dialog).
+
+When running as an NSM client, the mixer layout and current state will be saved in the NSM session.
+NOTE: NSM is not supported in the LADI version of jack_mixer,
+use the community version for NewSM and/or NonSM support.
+If you have patch that distinguishes between non-sm and new-sm protocols while
+not causing regressions in lash support, submit it to the original author (Nedko Arnaudov).
 
 
 FILES
@@ -262,7 +274,9 @@ ENVIRONMENT
 ``NSM_URL``
     When this environment variable is set, **jack_mixer** will act as a New
     Session Manager (NSM) session client.
-
+    NOTE: Neither non-sm, nor new-sm protocols are supported in LADI jack_mixer.
+    If you have patch that distinguishes between non-sm and new-sm protocols while
+    not causing regressions in lash support, submit it to the original author (Nedko Arnaudov).
 
 SIGNALS
 =======
@@ -280,7 +294,9 @@ SIGNALS
 SEE ALSO
 ========
 
-* Project homepage (https://rdio.space/jackmixer/)
-* Source code repository on GitHub (https://github.com/jack-mixer/jack_mixer)
+* Project homepage of the community version of jack_mixer (https://rdio.space/jackmixer/)
+* Source code of the community version of jack_mixer, repository on GitHub (https://github.com/jack-mixer/jack_mixer)
 * JACK Audio Connection Kit (https://jackaudio.org/)
-* New Session Manager (https://new-session-manager.jackaudio.org/)
+* Non Session Manager protocol (LADI copy) (https://ladish.org/nsm-proto.html)
+* Non Session Manager protocol (Jonathan Moore Liles, Non Session Manager) (http://non.tuxfamily.org/nsm/API.html)
+* New Session Manager, as supported by the community version of jack_mixer (https://new-session-manager.jackaudio.org/)
