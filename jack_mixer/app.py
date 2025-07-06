@@ -3,8 +3,9 @@
 #
 # This file is part of jack_mixer
 #
-# Copyright (C) 2006-2025 Nedko Arnaudov
-# Copyright (C) 2009-2021 Frederic Peters <fpeters@0d.be> et al.
+# SPDX-FileCopyrightText: Copyright (C) 2006-2025 Nedko Arnaudov
+# SPDX-FileCopyrightText: Copyright (C) 2009-2021 Frederic Peters <fpeters@0d.be> et al.
+# SPDX-License-Identifier: GPL-2.0-only
 #
 
 import getpass
